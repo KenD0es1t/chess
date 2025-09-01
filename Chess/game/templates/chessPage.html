@@ -9,9 +9,8 @@
     <link
       rel="shortcut icon"
       type="image/png"
-      href="{% static 'chess.png' %}"
+      href="{% static 'image/chess.png' %}"
     />
-
   </head>
 
   <body>
@@ -20,14 +19,16 @@
     </button>
 
     <div class="container">
-      <h1 class="turns" id="turns">White Starts</h1> 
+      <h1 class="turns" id="turns">White Starts</h1>
     </div>
+
     <div class="difContainer">
       <div class="top-status-bar status-bar">
         <div id="darkStatus" class="captured-pieces">
           <h2>Captured Pieces:</h2>
         </div>
       </div>
+
       <div class="container" id="boardContainer">
         <div class="chessboard" id="board"></div>
       </div>
@@ -39,9 +40,9 @@
       </div>
     </div>
 
-    {%csrf_token%}
+    {% csrf_token %}
 
-    <h1 hidden id = 'aiCol'>{{aiCol}}</h1>
+    <h1 hidden id="aiCol">{{ aiCol }}</h1>
 
     <div class="popup" id="popup-1">
       <div class="overlay"></div>
@@ -51,6 +52,9 @@
       </div>
     </div>
 
+    <script>
+      const STATIC_URL = "{% static 'image/' %}";
+    </script>
     <script src="{% static 'js/app.js' %}"></script>
   </body>
 </html>
