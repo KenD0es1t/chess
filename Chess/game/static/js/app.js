@@ -64,7 +64,7 @@ createBoard();
 // Sends a GET request to the server to get the current board state.
 async function getBoard() {
     return new Promise((resolve, reject) => {
-        $.get('/board')
+        $.get('/board/')
             .done(data => resolve(data))
             .fail(error => reject(error));
     });
@@ -79,7 +79,7 @@ function getMoves(sqId) {
 
     $.ajax({
         type: "POST",
-        url: "/board",
+        url: "/board/",
         enctype: 'multipart/form-data',
         data: formdata,
         success: function (res) {
@@ -106,7 +106,7 @@ function getAiMove(aiCol) {
     formdata.append('aiCol', aiCol);
     $.ajax({
         type: "POST",
-        url: "/board",
+        url: "/board/",
         enctype: 'multipart/form-data',
         data: formdata,
         success: function (res) {
@@ -131,7 +131,7 @@ function sendNewPlace(oldID, newID) {
 
     $.ajax({
         type: "POST",
-        url: "/board",
+        url: "/board/",
         enctype: 'multipart/form-data',
         data: formdata,
         success: function (res) {

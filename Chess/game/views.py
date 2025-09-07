@@ -5,6 +5,14 @@ from .movePieces import movePieces
 from .controller import controller
 from .engine import MiniMax
 import math,csv,time
+
+def home(request):
+    return render(request, "home.html")
+
+def join(request):
+    return render(request, "join.html")
+
+
 def chooseMode(request):
     return render(request, 'choosePage.html')
 def playLocal(request):
