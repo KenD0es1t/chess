@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+   {% load static %}
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Join | Concentrate-Chess</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'image/chess.png' %}"/>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
@@ -90,6 +92,8 @@
         color: #f6f6f4;
         border: none;
         border-radius: 10px;
+        text-align: center;
+        text-decoration: none;
         padding: 15px 20px;
         font-size: 1.1em;
         font-weight: bold;
@@ -117,11 +121,6 @@
         </div>
         <div class="form">
           <form class="login-form">
-            <input
-              type="text"
-              placeholder="Enter your username"
-              class="form-input"
-            />
             <input
               type="text"
               placeholder="Enter your username"
