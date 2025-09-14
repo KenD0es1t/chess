@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-   {% load static %}
+  {% load static %}
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Join | Concentrate-Chess</title>
-    <link rel="shortcut icon" type="image/png" href="{% static 'image/chess.png' %}"/>
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="{% static 'image/chess.png' %}"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <style>
       body {
         background-color: #886f63;
@@ -42,13 +49,13 @@
         padding: 20px;
       }
 
-      .text-box h1{
+      .text-box h1 {
         font-size: 65px;
         margin: 0;
         padding: 0;
       }
 
-      .text-box h3{
+      .text-box h3 {
         font-size: 15px;
         margin: 0;
         padding: 0;
@@ -120,14 +127,18 @@
           <h3>CONCENTRATE CHESS</h3>
         </div>
         <div class="form">
-          <form class="login-form">
-            <input
-              type="text"
-              placeholder="Enter your username"
-              class="form-input"
-            />
-            <a href="{% url 'chooseMode' %}" class="submit-button">PLAY NOW!</a>
-          </form>
+          <div class="form">
+            <form class="login-form" action="{% url 'join' %}" method="post">
+              {% csrf_token %}
+              <input
+                type="text"
+                placeholder="Enter your username"
+                class="form-input"
+                name="username"
+              />
+              <button type="submit" class="submit-button">PLAY NOW!</button>
+            </form>
+          </div>
         </div>
       </div>
     </div>

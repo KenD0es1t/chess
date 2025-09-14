@@ -10,11 +10,17 @@ def home(request):
     return render(request, "home.html")
 
 def join(request):
+    if request.method == 'POST':
+        username = request.POST.get('username', 'Player')
+        request.session['username'] = username
+        return redirect('chooseMode')
     return render(request, "join.html")
 
 
 def chooseMode(request):
-    return render(request, 'choosePage.html')
+    username = request.session.get('username', 'Player')
+    return render(request, 'choosePage.html', {'username': username})
+
 def playLocal(request):
     return render(request, 'chessPage.html',{'aiCol':None})
 def playAI(request):
